@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.btnStart = New System.Windows.Forms.Button()
         Me.txt1 = New System.Windows.Forms.TextBox()
         Me.txt2 = New System.Windows.Forms.TextBox()
@@ -36,6 +37,15 @@ Partial Class Form1
         Me.lblCat = New System.Windows.Forms.Label()
         Me.lblBird = New System.Windows.Forms.Label()
         Me.lblFish = New System.Windows.Forms.Label()
+        Me.lstout = New System.Windows.Forms.ListBox()
+        Me.picBird = New System.Windows.Forms.PictureBox()
+        Me.picDog = New System.Windows.Forms.PictureBox()
+        Me.picCat = New System.Windows.Forms.PictureBox()
+        Me.picFish = New System.Windows.Forms.PictureBox()
+        CType(Me.picBird, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picDog, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picCat, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picFish, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnStart
@@ -184,11 +194,68 @@ Partial Class Form1
         Me.lblFish.TabIndex = 13
         Me.lblFish.Text = "Fish"
         '
+        'lstout
+        '
+        Me.lstout.FormattingEnabled = True
+        Me.lstout.Location = New System.Drawing.Point(154, 293)
+        Me.lstout.Name = "lstout"
+        Me.lstout.Size = New System.Drawing.Size(238, 186)
+        Me.lstout.TabIndex = 14
+        '
+        'picBird
+        '
+        Me.picBird.Image = CType(resources.GetObject("picBird.Image"), System.Drawing.Image)
+        Me.picBird.Location = New System.Drawing.Point(438, 12)
+        Me.picBird.Name = "picBird"
+        Me.picBird.Size = New System.Drawing.Size(125, 136)
+        Me.picBird.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picBird.TabIndex = 15
+        Me.picBird.TabStop = False
+        Me.picBird.Visible = False
+        '
+        'picDog
+        '
+        Me.picDog.Image = CType(resources.GetObject("picDog.Image"), System.Drawing.Image)
+        Me.picDog.Location = New System.Drawing.Point(620, 12)
+        Me.picDog.Name = "picDog"
+        Me.picDog.Size = New System.Drawing.Size(104, 136)
+        Me.picDog.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picDog.TabIndex = 16
+        Me.picDog.TabStop = False
+        Me.picDog.Visible = False
+        '
+        'picCat
+        '
+        Me.picCat.Image = CType(resources.GetObject("picCat.Image"), System.Drawing.Image)
+        Me.picCat.Location = New System.Drawing.Point(438, 171)
+        Me.picCat.Name = "picCat"
+        Me.picCat.Size = New System.Drawing.Size(125, 137)
+        Me.picCat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picCat.TabIndex = 17
+        Me.picCat.TabStop = False
+        Me.picCat.Visible = False
+        '
+        'picFish
+        '
+        Me.picFish.Image = CType(resources.GetObject("picFish.Image"), System.Drawing.Image)
+        Me.picFish.Location = New System.Drawing.Point(620, 171)
+        Me.picFish.Name = "picFish"
+        Me.picFish.Size = New System.Drawing.Size(104, 137)
+        Me.picFish.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picFish.TabIndex = 18
+        Me.picFish.TabStop = False
+        Me.picFish.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(409, 371)
+        Me.ClientSize = New System.Drawing.Size(760, 497)
+        Me.Controls.Add(Me.picFish)
+        Me.Controls.Add(Me.picCat)
+        Me.Controls.Add(Me.picDog)
+        Me.Controls.Add(Me.picBird)
+        Me.Controls.Add(Me.lstout)
         Me.Controls.Add(Me.lblFish)
         Me.Controls.Add(Me.lblBird)
         Me.Controls.Add(Me.lblCat)
@@ -205,6 +272,10 @@ Partial Class Form1
         Me.Controls.Add(Me.btnStart)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        CType(Me.picBird, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picDog, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picCat, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picFish, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -224,4 +295,9 @@ Partial Class Form1
     Friend WithEvents lblCat As Label
     Friend WithEvents lblBird As Label
     Friend WithEvents lblFish As Label
+    Friend WithEvents lstout As ListBox
+    Friend WithEvents picBird As PictureBox
+    Friend WithEvents picDog As PictureBox
+    Friend WithEvents picCat As PictureBox
+    Friend WithEvents picFish As PictureBox
 End Class

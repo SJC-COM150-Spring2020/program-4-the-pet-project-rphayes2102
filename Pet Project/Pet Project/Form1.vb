@@ -5,34 +5,67 @@
 
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
         Dim vote As String
-        vote = InputBox("Vote for your Pet")
+        vote = InputBox("Vote A for Dog, B for Cat, C for Fish, D is for Bird and E to Exit")
 
-        Dim animals As String
-        Dim votes As Integer
 
-        'x will be index value
-        Dim vote As Integer
-        For x = 0 To 1
-            vote(x) = CInt(InputBox("You have voted"))
+        'x is counter, votes is entry 
+        Dim Dog, Cat, Fish, Bird As Integer
+        Dim Finish As Boolean
+        Finish = False
 
-        Next
-        Dim animals As String = ("Dog, Cat, Bird, Fish")
+
+        Do
+            vote = vote
+        Loop Until (Finish = True)
+
 
         'Casting Vote 
-        If vote Is LblDog Then
-            txt1.Text = "1 & You Voted Dog "
-        End If
-        If vote Is lblCat Then
-            txt2.Text = "1 & You Voted Cat "
-        End If
-        If vote Is lblBird Then
-            txt3.Text = "1 & You Voted Bird"
-        End If
-        If vote Is lblFish Then
-            txt4.Text = "1 & You Voted Fish"
+        If (vote = "A") Then
+            'Vote is for Dog
+            Dog = Dog + 1
+        ElseIf (vote = "B") Then
+            'Vote is for Cat
+            Cat = Cat + 1
+        ElseIf (vote = "C") Then
+            'Vote is for Fish
+            Fish = Fish + 1
+        ElseIf (vote = "D") Then
+            'Vote is for Bird
+            Bird = Bird + 1
+        ElseIf (vote = "E") Then
+            Finish = True
+        Else
+            MessageBox.Show("A, B, C, D")
         End If
 
-        MessageBox.Show("The Winner Is ")
+        lstout.items.add("Votes for Dog Equals  " & Dog)
+        lstout.items.add("Votes for Cat Equals  " & Cat)
+        lstout.items.add("Votes for Fish Equals " & Fish)
+        lstout.items.add("Votes for Bird Equals " & Bird)
+
+        Lstout.items.add("  ")
+
+
+        'Tallying Vote
+        If (Dog > Cat) And (Dog > Bird) And (Dog > Fish) Then
+            lstout.items.add("Dog is the Winner ")
+            picDog.visible = True
+        End If
+        If (Cat > Dog) And (Cat > Bird) And (Cat > Fish) Then
+            lstout.Items.Add("Cat is the Winner")
+            picCat.visible = True
+        End If
+        If (Bird > Dog) And (Bird > Cat) And (Bird > Fish) Then
+            lstout.Items.Add("Fish is the Winner")
+            picBird.Visible = False
+        End If
+        If (Fish > Dog) And (Fish > Cat) And (Fish > Bird) Then
+            lstout.Items.Add("Fish is the Winner")
+            picFish.visible = True
+        End If
+
+
+        lstout.Items.Add("The Winner Is ")
 
 
 
